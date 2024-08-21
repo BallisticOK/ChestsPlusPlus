@@ -18,7 +18,7 @@ public class VersionMatcher {
             this.put("1.21", "v1_21_R1");
         }
     };
-    private static final String FALLBACK_REVISION = "v1_20_R1";
+    private static final String FALLBACK_REVISION = "v1_21_R1";
 
     public static String match() {
         String craftBukkitPackage = Bukkit.getServer().getClass().getPackage().getName();
