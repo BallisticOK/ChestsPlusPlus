@@ -23,7 +23,7 @@ public class PartyInvite {
         Player onlinePlayer = player.getPlayer();
         if (onlinePlayer != null) {
             onlinePlayer.sendMessage(ChatColor.GREEN + Message.PARTY_INVITE.getString(
-                ChatColor.WHITE + player.getName() + ChatColor.GREEN, 
+                ChatColor.WHITE + owner.getName() + ChatColor.GREEN, 
                 ChatColor.WHITE + party.getPartyName() + ChatColor.GREEN));
 
             String tellraw = "tellraw " + onlinePlayer.getName() + 
