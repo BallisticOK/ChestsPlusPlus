@@ -35,4 +35,4 @@ jobs:
           draft: true
           generate_release_notes: true
           files: |
-            ./Server/plugins/ChestsPlusPlus-*.jar
+            ./Server/plugins/ChestsMinus-*.jar
