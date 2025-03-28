@@ -1,5 +1,4 @@
-# This workflow builds a Java project with Maven and uploads artifacts
-name: Build ChestsPlusPlus
+name: Build and Release ChestsPlusPlus
 
 on:
   push:
@@ -24,12 +23,19 @@ jobs:
           java-version: '21'
           distribution: 'adopt'
           cache: 'maven'
-      
+
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+      - name: List Target Directory
+        run: ls -la target/
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/v')  # Only upload when a tag is created
         with:
-          name: Artifacts
-          path: target/*.jar  # Updated path for Maven build output
+          draft: true
+          generate_release_notes: true
+          files: |
+            ./target/ChestsPlusPlus-*.jar  # Adjust to the correct file path of your JAR
