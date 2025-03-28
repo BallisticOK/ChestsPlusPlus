@@ -31,6 +31,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Artifacts
-          path: Server/plugins/ChestsMinus-*.jar
+          path: ../Server/plugins/ChestsPlusPlus-*.jar
 
       
